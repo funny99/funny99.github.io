@@ -20,7 +20,7 @@
 <body>
 <div class="slides">
     <slides id="container">
-        <slide class="slide"><section class="slide-wrapper"><hgroup>
+        <slide class="slide fill" style="background-image:url('./img/bg1.png')"><section class="slide-wrapper"><hgroup>
 <h1>hexo</h1>
 
 </hgroup><article>
@@ -28,12 +28,12 @@
 <p>Hexo是一个快速、简洁且高效的博客框架（静态博客生成器）。Hexo使用Markdown解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 
 </article></section></slide>
-<slide class="slide" data-transition="cards" data-outcallback="outCB" data-incallback="inCB"><section class="slide-wrapper"><hgroup>
+<slide class="slide" data-transition="cards"><section class="slide-wrapper"><hgroup>
 <h1>为什么选择hexo</h1>
 
 </hgroup><article>
 
-<ul class="moveIn">
+<ul>
 <li>不用配置服务器</li>
 <li>不用数据库</li>
 <li>访问速度相当快</li>
@@ -111,8 +111,9 @@
 
 </hgroup><article>
 
-<ol>
-<li>与github建立关联<br>在项目根目录下找到配置文件_config.yml，找到最后deploy，修改成<pre><code class="html">deploy: 
+<ol class="moveIn">
+<li>与github建立关联 
+在项目根目录下找到配置文件_config.yml，找到最后deploy，修改成<pre><code class="html">deploy: 
  type: git
  repository: &lt;您的github仓库地址&gt;
  branch: master
@@ -195,6 +196,11 @@ hexo deploy
 在多说设置你的short_name（在 <a href="http://duoshuo.com/create-site/" target="_blank">http://duoshuo.com/create-site/</a> 自己申请）<br>copy一份通用代码，粘贴到你的/themes/modernist/layout/_partial/comment.ejs里面</p>
 
 </article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>参考资料</h1>
+<p><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank">http://ibruce.info/2013/11/22/hexo-your-blog/</a><br><a href="http://wuchong.me/blog/2014/11/20/how-to-use-jacman/" target="_blank">http://wuchong.me/blog/2014/11/20/how-to-use-jacman/</a><br><a href="http://chitanda.me/2015/06/18/hexo-sync-in-multiple-pc/" target="_blank">http://chitanda.me/2015/06/18/hexo-sync-in-multiple-pc/</a></p>
+
+</article></section></slide>
 <slide class="slide fill" style="background-image:url('./img/bg1.png')"><section class="slide-wrapper"><article>
 <h2>谢谢</h2>
 
@@ -243,7 +249,7 @@ Slide.init({
     slideClass: '.slide',
     buildClass: '.build',
     progressID: 'progress',
-    transition: 'glue',
+    transition: 'zoomin',
     width: 1100,
     dir: './',
     
