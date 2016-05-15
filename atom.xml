@@ -192,43 +192,4 @@
     
   </entry>
   
-  <entry>
-    <title>my webpage favorite</title>
-    <link href="http://funny99.github.io/2016/04/30/my-webpage-favorite/"/>
-    <id>http://funny99.github.io/2016/04/30/my-webpage-favorite/</id>
-    <published>2016-04-30T06:23:09.000Z</published>
-    <updated>2016-05-15T06:31:30.000Z</updated>
-    
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;web&lt;ul&gt;
-&lt;li&gt;hexo&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://chitanda.me/2015/06/18/hexo-sync-in-multiple-pc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;源码管理&lt;/a&gt;  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;nodePPT&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://js8.in/2013/11/16/%E6%8E%A8%E8%8D%90nodeppt%EF%BC%9A%E4%BD%BF%E7%94%A8markdown%E8%AF%AD%E6%B3%95%E6%9D%A5%E5%86%99%E7%BD%91%E9%A1%B5ppt/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;使用教程&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;tool&lt;/li&gt;
-&lt;li&gt;play&lt;/li&gt;
-&lt;li&gt;other&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;web&lt;ul&gt;
-&lt;li&gt;hexo&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://chitanda.me/2015/06/18/hexo-sync-in-multiple-pc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;源码管理&lt;/a&gt; 
-    
-    </summary>
-    
-    
-      <category term="收藏" scheme="http://funny99.github.io/tags/%E6%94%B6%E8%97%8F/"/>
-    
-  </entry>
-  
 </feed>
