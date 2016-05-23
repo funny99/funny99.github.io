@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://funny99.github.io/"/>
-  <updated>2016-05-15T03:09:01.000Z</updated>
+  <updated>2016-05-23T16:13:10.000Z</updated>
   <id>http://funny99.github.io/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js奇遇</title>
+    <link href="http://funny99.github.io/2016/05/23/js%E5%A5%87%E9%81%87/"/>
+    <id>http://funny99.github.io/2016/05/23/js奇遇/</id>
+    <published>2016-05-23T15:34:42.000Z</published>
+    <updated>2016-05-23T16:13:10.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;js数组拷贝&quot;&gt;&lt;a href=&quot;#js数组拷贝&quot; class=&quot;headerlink&quot; title=&quot;js数组拷贝&quot;&gt;&lt;/a&gt;js数组拷贝&lt;/h1&gt;&lt;p&gt;1、 浅拷贝.一个数组的修改会影响到另一个&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var a = [1, 2, 3, 4],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    b = a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;b[2] = 0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(a, b);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[1, 2, 0, 4] [1, 2, 0, 4] &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、concat和slice可以解决以上问题&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var a = [1, 2, 3, 4],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    b = a.slice(),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    c = a.concat();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;b[2] = 0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c[2] = 0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(a, b, c);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[1, 2, 3, 4] [1, 2, 0, 4] [1, 2, 0, 4]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3、不过！以上slice和concat并不是使用在所有的数组上都有效(这说明它们的深拷贝只是作用在数组的第一维上)&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var a = [&amp;#123;name: &lt;span class=&quot;string&quot;&gt;&#39;lily&#39;&lt;/span&gt;, age: 18&amp;#125;, &amp;#123;name: &lt;span class=&quot;string&quot;&gt;&#39;lucy&#39;&lt;/span&gt;, age: 16&amp;#125;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    b = a.slice(),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    c = a.concat();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;b[1].age = 22;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c[1].name = &lt;span class=&quot;string&quot;&gt;&#39;bruce&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(JSON.stringify(a), JSON.stringify(b), JSON.stringify(c));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[{“name”:”lily”,”age”:18},{“name”:”bruce”,”age”:22}]&lt;br&gt;[{“name”:”lily”,”age”:18},{“name”:”bruce”,”age”:22}]&lt;br&gt;[{“name”:”lily”,”age”:18},{“name”:”bruce”,”age”:22}]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;4、那么如何实现数据的真正深拷贝&lt;br&gt;jQuery就有一个现成的： $.extend&lt;br&gt;自己扩展 ？&lt;/p&gt;
+&lt;h1 id=&quot;chrome中类数组对象会自动根据key值进行排序&quot;&gt;&lt;a href=&quot;#chrome中类数组对象会自动根据key值进行排序&quot; class=&quot;headerlink&quot; title=&quot;chrome中类数组对象会自动根据key值进行排序&quot;&gt;&lt;/a&gt;chrome中类数组对象会自动根据key值进行排序&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var a = &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;23&#39;&lt;/span&gt;: &amp;#123;name: &lt;span class=&quot;string&quot;&gt;&#39;lily&#39;&lt;/span&gt;, age: 18&amp;#125;, &lt;span class=&quot;string&quot;&gt;&#39;12&#39;&lt;/span&gt;: &amp;#123;name: &lt;span class=&quot;string&quot;&gt;&#39;lucy&#39;&lt;/span&gt;, age: 20&amp;#125;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(JSON.stringify(a));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;{“12”:{“name”:”lucy”,”age”:20},”23”:{“name”:”lily”,”age”:18}}&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;js数组拷贝&quot;&gt;&lt;a href=&quot;#js数组拷贝&quot; class=&quot;headerlink&quot; title=&quot;js数组拷贝&quot;&gt;&lt;/a&gt;js数组拷贝&lt;/h1&gt;&lt;p&gt;1、 浅拷贝.一个数组的修改会影响到另一个&lt;br&gt;&lt;figure class=&quot;highlight bash
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
